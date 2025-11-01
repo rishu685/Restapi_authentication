@@ -8,6 +8,8 @@ A modern, full-stack task management application built with Node.js, Express, Mo
 - **API Documentation**: [Swagger UI](http://localhost:5000/api/v1/docs)
 - **API Base URL**: [http://localhost:5000/api/v1](http://localhost:5000/api/v1)
 
+> **🌐 For Production Deployment**: See [DEPLOYMENT.md](DEPLOYMENT.md) for complete Netlify + Render deployment guide
+
 ## 📋 Demo Accounts
 
 ```
@@ -431,6 +433,33 @@ curl -X POST http://localhost:5000/api/v1/auth/login \
 - **Development**: Full logging, hot reloading
 - **Production**: Optimized builds, security headers, monitoring
 - **Testing**: Isolated database, mock services
+
+## 🌐 Production Deployment
+
+### Quick Deploy to Netlify + Render
+
+1. **Deploy Backend to Render**
+   - Create account at [Render](https://render.com)
+   - Connect GitHub repository
+   - Use `backend` as root directory
+   - Set environment variables (see [DEPLOYMENT.md](DEPLOYMENT.md))
+
+2. **Deploy Frontend to Netlify**
+   - Create account at [Netlify](https://netlify.com)
+   - Connect GitHub repository
+   - Use `frontend` as base directory
+   - Set `VITE_API_URL` to your Render backend URL
+
+3. **Setup MongoDB Atlas**
+   - Create free cluster at [MongoDB Atlas](https://mongodb.com/atlas)
+   - Get connection string for backend
+
+**📋 Complete deployment guide**: See [DEPLOYMENT.md](DEPLOYMENT.md) for step-by-step instructions with screenshots and troubleshooting.
+
+### Alternative Platforms
+- **Backend**: Railway, Vercel, AWS, Heroku, DigitalOcean
+- **Frontend**: Vercel, GitHub Pages, Firebase Hosting
+- **Database**: MongoDB Atlas, PlanetScale, Supabase
 
 ## 🤝 Contributing
 
