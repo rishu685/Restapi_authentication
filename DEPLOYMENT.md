@@ -59,17 +59,25 @@ This guide will help you deploy the Task Manager App to production using Netlify
 4. **Set Environment Variables**
    ```
    NODE_ENV=production
-   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/scalable-rest-api?retryWrites=true&w=majority
-   JWT_SECRET=your-super-secret-jwt-key-minimum-32-characters-long
+   MONGODB_URI=mongodb+srv://USERNAME:PASSWORD@CLUSTER.mongodb.net/DATABASE_NAME?retryWrites=true&w=majority
+   JWT_SECRET=YOUR_ACTUAL_SECRET_MINIMUM_32_CHARACTERS_LONG
    JWT_EXPIRE=7d
    BCRYPT_SALT_ROUNDS=12
    RATE_LIMIT_WINDOW_MS=900000
    RATE_LIMIT_MAX_REQUESTS=100
-   ALLOWED_ORIGINS=https://your-app-name.netlify.app
+   ALLOWED_ORIGINS=https://YOUR_APP_NAME.netlify.app
    API_VERSION=v1
    API_PREFIX=/api
    LOG_LEVEL=info
    ```
+
+   ⚠️ **IMPORTANT**: Replace the placeholder values above with your actual values:
+   - `USERNAME` → Your MongoDB Atlas username
+   - `PASSWORD` → Your MongoDB Atlas password  
+   - `CLUSTER` → Your MongoDB Atlas cluster name
+   - `DATABASE_NAME` → Your database name (e.g., taskmanager)
+   - `YOUR_ACTUAL_SECRET_MINIMUM_32_CHARACTERS_LONG` → Generate a secure JWT secret
+   - `YOUR_APP_NAME` → Your actual Netlify app name
 
 5. **Deploy**
    - Click "Create Web Service"
